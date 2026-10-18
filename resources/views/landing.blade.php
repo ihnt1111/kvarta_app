@@ -127,53 +127,49 @@
                     <p style="font-size: 20px; font-weight: 700;">+375 (29) 123-45-67</p>
                 </div>
             </div>
-
-            <form id="leadForm" novalidate>
-                <div class="form-group">
-                    <label>Ваше имя</label>
-                    <input type="text" name="name" required placeholder="Иван">
-                    <div class="error-text" data-error="name"></div>
-                </div>
-                <div class="form-group">
-                    <label>Телефон</label>
-                    <input type="tel" name="phone" required placeholder="+375 29 123-45-67">
-                    <div class="error-text" data-error="phone"></div>
-                </div>
-                <div class="form-group">
-                    <label>Что интересует</label>
-                    <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="interest" value="order" checked>
-                            <span class="radio-custom"></span>
-                            Разовый заказ
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="interest" value="subscription">
-                            <span class="radio-custom"></span>
-                            Подписка
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="interest" value="question">
-                            <span class="radio-custom"></span>
-                            Вопрос
-                        </label>
+            <div class="form-wrapper">
+                <form id="leadForm" novalidate>
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" name="name" required placeholder="Иван">
+                        <div class="error-text" data-error="name"></div>
                     </div>
-                    <div class="error-text" data-error="interest"></div>
-                </div>
-                <div class="form-group">
-                    <label>Комментарий (необязательно)</label>
-                    <textarea name="comment" rows="3" placeholder="Например, нужен помол под воронку"></textarea>
-                    <div class="error-text" data-error="comment"></div>
-                </div>
-                <button type="submit" class="btn" id="submitBtn">Отправить заявку</button>
-
-                <div id="formSuccess" class="success-message">Спасибо! Заявка принята. Мы свяжемся с вами в ближайшее
-                    время.
-                </div>
-                <div id="formError" class="error-message">Произошла ошибка при отправке. Попробуйте позже или позвоните
-                    нам.
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" name="phone" required placeholder="+375 29 123-45-67">
+                        <div class="error-text" data-error="phone"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Что интересует</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="interest" value="order" checked>
+                                <span class="radio-custom"></span>
+                                Разовый заказ
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="interest" value="subscription">
+                                <span class="radio-custom"></span>
+                                Подписка
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="interest" value="question">
+                                <span class="radio-custom"></span>
+                                Вопрос
+                            </label>
+                        </div>
+                        <div class="error-text" data-error="interest"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий (необязательно)</label>
+                        <textarea name="comment" rows="3" placeholder="Например, нужен помол под воронку"></textarea>
+                        <div class="error-text" data-error="comment"></div>
+                    </div>
+                    <button type="submit" class="btn" id="submitBtn">Отправить заявку</button>
+                </form>
+                <div id="formSuccess" class="success-message">Спасибо! Заявка принята.<br>Мы свяжемся с вами в ближайшее время.</div>
+                <div id="formError" class="error-message">Произошла ошибка при отправке.<br>Попробуйте позже или позвоните нам.</div>
+            </div>
         </div>
     </div>
 

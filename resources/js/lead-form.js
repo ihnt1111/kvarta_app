@@ -42,10 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
 
             if (response.ok) {
-                // Успех (201) — скрываем форму
-                form.style.display = 'none';
+                // Успех (201) — показываем сообщение, НО форму НЕ скрываем
                 formSuccess.textContent = result.message;
                 formSuccess.style.display = 'block';
+                form.reset(); // Очищаем поля после успешной отправки
+                setTimeout(() => {
+                    formSuccess.style.display = 'none';
+                }, 15000);
             } else if (response.status === 422) {
                 // Ошибки валидации — показываем под полями, форму НЕ скрываем
                 const errors = result.errors;
@@ -57,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } else if (response.status === 429) {
-                // Дубль (429) — показываем сообщение, но форму НЕ скрываем
-                // Даем клиенту шанс исправить номер
                 formError.textContent = result.message;
                 formError.style.display = 'block';
             } else {

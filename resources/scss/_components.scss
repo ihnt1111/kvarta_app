@@ -282,6 +282,7 @@ input[type="radio"]:checked + .radio-custom::after {
   border-radius: 50%;
 }
 
+
 // Messages & Errors
 .error-text {
   color: $accent;
@@ -378,5 +379,29 @@ input[type="radio"]:checked + .radio-custom::after {
   .nav a {
     margin-left: 0;
     margin-right: 15px;
+  }
+}
+@media (max-width: 375px) {
+  .header {
+    .nav a {
+      font-size: 13px;
+    }
+  }
+  .header-address{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    .nav a {
+      font-size: 11px;
+    }
+  }
+  .header-address{
+    font-size: 12px;
+  }
+  .block.footer{
+    padding: 10px 10px;
   }
 }
