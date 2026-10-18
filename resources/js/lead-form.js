@@ -42,10 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
 
             if (response.ok) {
+                // Успех (201) — скрываем форму
                 form.style.display = 'none';
                 formSuccess.textContent = result.message;
                 formSuccess.style.display = 'block';
             } else if (response.status === 422) {
+                // Ошибки валидации — показываем под полями, форму НЕ скрываем
                 const errors = result.errors;
                 for (const [field, messages] of Object.entries(errors)) {
                     const errorEl = document.querySelector(`[data-error="${field}"]`);
@@ -54,18 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         errorEl.style.display = 'block';
                     }
                 }
-                if (result.message && !result.errors) {
-                    formError.textContent = result.message;
-                    formError.style.display = 'block';
-                }
+            } else if (response.status === 429) {
+                // Дубль (429) — показываем сообщение, но форму НЕ скрываем
+                // Даем клиенту шанс исправить номер
+                formError.textContent = result.message;
+                formError.style.display = 'block';
             } else {
                 throw new Error('Server error');
             }
         } catch (error) {
+            formError.textContent = 'Ошибка соединения. Проверьте интернет и попробуйте снова.';
             formError.style.display = 'block';
         } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Отправить заявку';
         }
+    });
+    form.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('input', () => {
+            formError.style.display = 'none';
+            const fieldName = input.getAttribute('name');
+            const errorEl = document.querySelector(`[data-error="${fieldName}"]`);
+            if (errorEl) errorEl.style.display = 'none';
+        });
     });
 });

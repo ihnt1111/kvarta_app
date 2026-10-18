@@ -35,21 +35,55 @@
 // Hero
 .hero {
   grid-column: span 12;
-  padding: 100px 40px;
+  padding: 0;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 600px;
 
-  h1 {
-    font-size: clamp(40px, 8vw, 96px);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
+  .hero-text {
+    padding: 100px 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: clamp(40px, 6vw, 96px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: 30px;
+      max-width: 400px;
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 
-  p {
-    margin-top: 30px;
-    max-width: 400px;
-    font-size: 18px;
-    font-weight: 500;
+  .hero-carousel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: $bg;
+  }
+
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 2s ease-in-out;
+  }
+
+  .carousel-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 40px;
+    flex-shrink: 0;
   }
 }
 
@@ -90,6 +124,7 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    mix-blend-mode: multiply;
   }
 }
 
@@ -197,6 +232,56 @@
   }
 }
 
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.radio-group .radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 0;
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+
+.radio-custom {
+  width: 16px;
+  height: 16px;
+  border: 1px solid $border;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  display: inline-block;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+input[type="radio"]:checked + .radio-custom {
+  background-color: $border;
+}
+
+input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px; /* Точка внутри тоже стала меньше */
+  height: 6px;
+  background-color: $bg;
+  border-radius: 50%;
+}
+
 // Messages & Errors
 .error-text {
   color: $accent;
@@ -242,28 +327,54 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 60px 20px;
+  .block {
+    padding: 20px;
   }
+
+  .hero {
+    padding: 40px 20px;
+    min-height: auto;
+    flex-direction: column;
+
+    .hero-text {
+      padding: 0;
+    }
+
+    .hero-carousel {
+      display: none;
+    }
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
   .info-block {
     grid-column: span 12;
   }
+
   .product {
     grid-column: span 12;
   }
+
   .form-block {
     grid-template-columns: 1fr;
   }
+
   .subscription {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
   }
+
   .header {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
   }
+
   .nav a {
     margin-left: 0;
     margin-right: 15px;

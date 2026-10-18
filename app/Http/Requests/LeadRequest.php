@@ -13,7 +13,7 @@ class LeadRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        $phone = preg_replace('/[^0-9+]/', '', (string) $this->input('phone'));
+        $phone = preg_replace('/[^0-9+]/', '', (string)$this->input('phone'));
 
         if (str_starts_with($phone, '80')) {
             $phone = '+375' . substr($phone, 2);
@@ -35,8 +35,17 @@ class LeadRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'phone.regex' => 'Введите белорусский номер (например, +375291234567).',
             'name.required' => 'Пожалуйста, укажите ваше имя.',
+            'name.string' => 'Имя должно быть текстом.',
+            'name.max' => 'Имя слишком длинное.',
+
+            'phone.required' => 'Пожалуйста, укажите номер телефона.',
+            'phone.regex' => 'Введите корректный белорусский номер (например, +375291234567).',
+
+            'interest.required' => 'Пожалуйста, выберите, что вас интересует.',
+            'interest.in' => 'Выбрано неверное значение.',
+
+            'comment.max' => 'Комментарий слишком длинный (максимум 1000 символов).',
         ];
     }
 }

@@ -17,7 +17,7 @@
 <div class="container">
     <div class="grid">
         <div class="block header">
-            <div class="logo">Кварта</div>
+            <div class="logo">KVARTA</div>
             <div class="nav">
                 <a href="#products">Ассортимент</a>
                 <a href="#form">Заявка</a>
@@ -29,9 +29,17 @@
 
     <div class="grid">
         <div class="block hero">
-            <h1>Свежая<br>обжарка.<br>Четверг.</h1>
-            <p>Маленькая мастерская в Минске. Обжариваем партиями по 5 кг. Доставляем в пятницу — вы получаете зерно на
-                1–3 день после обжарки.</p>
+            <div class="hero-text">
+                <h1>Свежая<br>обжарка.<br>Четверг.</h1>
+                <p>Маленькая мастерская в Минске. Обжариваем партиями по 5 кг. Доставляем в пятницу — вы получаете зерно на 1–3 день после обжарки.</p>
+            </div>
+            <div class="hero-carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <img src="{{ asset('images/img_1.jpg') }}" alt="Пачка кофе 1">
+                    <img src="{{ asset('images/img_2.jpg') }}" alt="Пачка кофе 2">
+                    <img src="{{ asset('images/img_3.jpg') }}" alt="Пачка кофе 3">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -53,45 +61,45 @@
     <div class="grid" id="products">
         <div class="block product">
             <div class="product-img">
-                <img src="{{ asset('images/ethiopia.png') }}" alt="Эфиопия"
+                <img src="{{ asset('images/img_1.jpg') }}" alt="Эфиопия"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
             <div>
                 <div class="product-title">Эфиопия<br>Иргачеффе</div>
-                <div class="product-desc">цветочный, бергамот, светлая обжарка · 250 г</div>
+                <div class="product-desc">цветочный, бергамот ·&nbsp;250&nbsp;г</div>
                 <div class="product-price">32 BYN</div>
             </div>
         </div>
         <div class="block product">
             <div class="product-img">
-                <img src="{{ asset('images/colombia.png') }}" alt="Колумбия"
+                <img src="{{ asset('images/img_2.jpg') }}" alt="Колумбия"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
             <div>
                 <div class="product-title">Колумбия<br>Уила</div>
-                <div class="product-desc">карамель, красное яблоко · 250 г</div>
+                <div class="product-desc">карамель, красное яблоко ·&nbsp;250&nbsp;г</div>
                 <div class="product-price">29 BYN</div>
             </div>
         </div>
         <div class="block product">
             <div class="product-img">
-                <img src="{{ asset('images/brazil.png') }}" alt="Бразилия"
+                <img src="{{ asset('images/img_3.jpg') }}" alt="Бразилия"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
             <div>
                 <div class="product-title">Бразилия<br>Серрадо</div>
-                <div class="product-desc">орех, шоколад, под эспрессо · 250 г</div>
+                <div class="product-desc">орех, шоколад, под эспрессо ·&nbsp;250&nbsp;г</div>
                 <div class="product-price">26 BYN</div>
             </div>
         </div>
         <div class="block product">
             <div class="product-img">
-                <img src="{{ asset('images/drip.png') }}" alt="Дрип-пакеты"
+                <img src="{{ asset('images/img_4.png') }}" alt="Дрип-пакеты"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
             <div>
                 <div class="product-title">Дрип-пакеты<br>Ассорти</div>
-                <div class="product-desc">10 штук в коробке</div>
+                <div class="product-desc">10&nbsp;штук в коробке</div>
                 <div class="product-price">18 BYN</div>
             </div>
         </div>
@@ -120,7 +128,7 @@
                 </div>
             </div>
 
-            <form id="leadForm">
+            <form id="leadForm" novalidate>
                 <div class="form-group">
                     <label>Ваше имя</label>
                     <input type="text" name="name" required placeholder="Иван">
@@ -133,11 +141,23 @@
                 </div>
                 <div class="form-group">
                     <label>Что интересует</label>
-                    <select name="interest">
-                        <option value="order">Разовый заказ</option>
-                        <option value="subscription">Подписка</option>
-                        <option value="question">Вопрос</option>
-                    </select>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="interest" value="order" checked>
+                            <span class="radio-custom"></span>
+                            Разовый заказ
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="interest" value="subscription">
+                            <span class="radio-custom"></span>
+                            Подписка
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="interest" value="question">
+                            <span class="radio-custom"></span>
+                            Вопрос
+                        </label>
+                    </div>
                     <div class="error-text" data-error="interest"></div>
                 </div>
                 <div class="form-group">

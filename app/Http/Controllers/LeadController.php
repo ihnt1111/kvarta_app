@@ -25,7 +25,7 @@ class LeadController extends Controller
                 'lead_id' => $lead->id,
             ], 201);
         } catch (DuplicateLeadException $e) {
-            return response()->json(['message' => $e->getMessage()], 200);
+            return response()->json(['message' => $e->getMessage()], 429);
         }
     }
 }
