@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кварта — свежая обжарка кофе в Минске</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="description"
           content="Маленькая мастерская обжарки в Минске. Обжариваем по четвергам, доставляем в пятницу.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
