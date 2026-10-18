@@ -1,1 +1,1 @@
-//
+import './lead-form';

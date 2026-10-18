@@ -1,0 +1,271 @@
+// Header
+.header {
+  grid-column: span 12;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: $text;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.header-address {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+// Hero
+.hero {
+  grid-column: span 12;
+  padding: 100px 40px;
+
+  h1 {
+    font-size: clamp(40px, 8vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 30px;
+    max-width: 400px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+// Info Blocks
+.info-block {
+  grid-column: span 4;
+
+  h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    color: $gray;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+// Products
+.product {
+  grid-column: span 3;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.product-desc {
+  font-size: 12px;
+  color: $gray;
+  margin-top: 5px;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+// Subscription
+.subscription {
+  grid-column: span 12;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $text;
+  color: $bg;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin-top: 10px;
+    opacity: 0.8;
+  }
+
+  .sub-price {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+// Form
+.form-block {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid $border;
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    border-radius: 0;
+
+    &:focus {
+      background: #fff;
+      box-shadow: 0 0 0 1px $border;
+    }
+  }
+}
+
+.btn {
+  background: $border;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    background: #333;
+  }
+
+  &:disabled {
+    background: #666;
+    cursor: wait;
+  }
+}
+
+// Messages & Errors
+.error-text {
+  color: $accent;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+  font-weight: 500;
+}
+
+.success-message {
+  display: none;
+  background: #4a5d3a;
+  color: white;
+  padding: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.error-message {
+  display: none;
+  background: $accent;
+  color: white;
+  padding: 20px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+// Footer
+.footer {
+  grid-column: span 12;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 40px;
+  font-size: 12px;
+  color: $gray;
+}
+
+// Media Queries
+@media (max-width: 1024px) {
+  .product {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+  .info-block {
+    grid-column: span 12;
+  }
+  .product {
+    grid-column: span 12;
+  }
+  .form-block {
+    grid-template-columns: 1fr;
+  }
+  .subscription {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}

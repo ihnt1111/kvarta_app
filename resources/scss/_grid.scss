@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1px;
+  background-color: $border;
+  border: 1px solid $border;
+  margin-bottom: 20px;
+}
+
+.block {
+  background-color: $bg;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}

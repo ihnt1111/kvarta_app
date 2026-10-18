@@ -1,0 +1,13 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: $bg;
+  color: $text;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
