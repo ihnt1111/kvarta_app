@@ -124,7 +124,7 @@
                     Оплата при получении.</p>
                 <div id="contacts" style="margin-top: 40px;">
                     <p style="font-size: 14px; color: #666; margin-bottom: 5px;">Связаться напрямую:</p>
-                    <p style="font-size: 20px; font-weight: 700;">+375 (29) 123-45-67</p>
+                    <a href="tel:+375291234567" class="phone-link">+375 (29) 123-45-67</a>
                 </div>
             </div>
             <div class="form-wrapper">

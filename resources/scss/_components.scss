@@ -282,6 +282,18 @@ input[type="radio"]:checked + .radio-custom::after {
   border-radius: 50%;
 }
 
+.phone-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: $text;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: $text;
+  }
+}
+
 
 // Messages & Errors
 .error-text {
@@ -381,13 +393,14 @@ input[type="radio"]:checked + .radio-custom::after {
     margin-right: 15px;
   }
 }
+
 @media (max-width: 375px) {
   .header {
     .nav a {
       font-size: 13px;
     }
   }
-  .header-address{
+  .header-address {
     font-size: 13px;
   }
 }
@@ -398,10 +411,10 @@ input[type="radio"]:checked + .radio-custom::after {
       font-size: 11px;
     }
   }
-  .header-address{
+  .header-address {
     font-size: 12px;
   }
-  .block.footer{
+  .block.footer {
     padding: 10px 10px;
   }
 }
