@@ -25,7 +25,7 @@ class LeadRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'regex:/^[а-яА-ЯёЁa-zA-Z\s\-]+$/u'],
             'phone' => ['required', 'regex:/^\+375(17|25|29|33|44)\d{7}$/'],
             'interest' => ['required', 'string', 'in:subscription,order,question'],
             'comment' => ['nullable', 'string', 'max:1000'],
@@ -38,6 +38,7 @@ class LeadRequest extends FormRequest
             'name.required' => 'Пожалуйста, укажите ваше имя.',
             'name.string' => 'Имя должно быть текстом.',
             'name.max' => 'Имя слишком длинное.',
+            'name.regex' => 'Имя должно содержать только буквы, пробелы или дефисы (без цифр и символов).',
 
             'phone.required' => 'Пожалуйста, укажите номер телефона.',
             'phone.regex' => 'Введите корректный белорусский номер (например, +375291234567).',
