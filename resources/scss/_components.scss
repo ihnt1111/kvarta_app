@@ -108,7 +108,8 @@
 // Products
 .product {
   grid-column: span 3;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   min-height: 400px;
 }
 
@@ -119,6 +120,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  flex-shrink: 0;
 
   img {
     max-width: 100%;
@@ -126,6 +128,12 @@
     object-fit: contain;
     mix-blend-mode: multiply;
   }
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .product-title {
@@ -138,12 +146,13 @@
   font-size: 12px;
   color: $gray;
   margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .product-price {
   font-size: 18px;
   font-weight: 700;
-  margin-top: 15px;
+  margin-top: auto;
 }
 
 // Subscription

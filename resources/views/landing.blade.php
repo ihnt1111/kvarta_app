@@ -64,7 +64,7 @@
                 <img src="{{ asset('images/img_1.jpg') }}" alt="Эфиопия"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
-            <div>
+            <div class="product-info">
                 <div class="product-title">Эфиопия<br>Иргачеффе</div>
                 <div class="product-desc">цветочный, бергамот ·&nbsp;250&nbsp;г</div>
                 <div class="product-price">32 BYN</div>
@@ -75,7 +75,7 @@
                 <img src="{{ asset('images/img_2.jpg') }}" alt="Колумбия"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
-            <div>
+            <div class="product-info">
                 <div class="product-title">Колумбия<br>Уила</div>
                 <div class="product-desc">карамель, красное яблоко ·&nbsp;250&nbsp;г</div>
                 <div class="product-price">29 BYN</div>
@@ -86,7 +86,7 @@
                 <img src="{{ asset('images/img_3.jpg') }}" alt="Бразилия"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
-            <div>
+            <div class="product-info">
                 <div class="product-title">Бразилия<br>Серрадо</div>
                 <div class="product-desc">орех, шоколад, под эспрессо ·&nbsp;250&nbsp;г</div>
                 <div class="product-price">26 BYN</div>
@@ -97,7 +97,7 @@
                 <img src="{{ asset('images/img_4.png') }}" alt="Дрип-пакеты"
                      onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'font-size:12px;color:#999\'>Фото</span>'">
             </div>
-            <div>
+            <div class="product-info">
                 <div class="product-title">Дрип-пакеты<br>Ассорти</div>
                 <div class="product-desc">10&nbsp;штук в коробке</div>
                 <div class="product-price">18 BYN</div>
