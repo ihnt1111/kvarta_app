@@ -381,3 +381,6 @@ Database migrations run at startup only if the Dockerfile or Render start comman
 - Keep `APP_DEBUG=false` in production.
 - Protect Telegram bot tokens and database credentials.
 - Avoid using real personal data in test submissions.
+
+
+![Снимок экрана 2026-10-19 в 13.40.20.png](../screenshot/ai-log/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-10-19%20%D0%B2%2013.40.20.png)
